@@ -1,0 +1,27 @@
+.box {
+    background-color: #fff;
+    padding: 2vh 4vh;
+    height: 40vh;
+    .course-image {
+      height: 25vh;
+      width: 100%;
+      background-color: #3b99a0;
+      // background-size: 100%;
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+    p {
+      font-size: 0.75rem;
+    }
+  }
+   
+  button {
+      position: absolute;
+      margin-left: -5vh;
+      // i {
+      //     color: blue;
+      // }
+  }

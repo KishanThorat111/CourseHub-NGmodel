@@ -1,0 +1,47 @@
+// img {
+//     width: 100%;
+//     object-fit: cover;
+//     object-position: center;
+//     height: 80vh;
+// }
+
+// .main-content {
+//     position: absolute;
+//     top: 40%;
+//     left: 20%;
+//     transform: translate(-50%, -50%);
+//     h1 {
+//         font-size: 3rem;
+//     }
+// }
+
+// section.courses {
+//     background-color: #effeff;
+//     padding: 8vh;
+// }
+
+
+img {
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    height: 80vh;
+}
+
+.main-content {
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+    // text-align: center; /* Center-aligns text inside */
+}
+
+.main-content h1 {
+    font-size: 3rem;
+}
+
+section.courses {
+    background-color: #effeff;
+    padding: 8vh;
+}
+

@@ -1,0 +1,32 @@
+<div class="row mt-5">
+  @for(course of courseService.coursesSignal(); track $index) {
+  <!-- @for(course of courses(); track $index) { -->
+    <!-- @for(course of courses; track $index) { -->
+    <div class="col-lg-4 mb-4">
+    <!-- <button class="btn btn-primary" (click)="changeIsActive(course)">Test IsAdm</button> -->
+
+    <div class="box" align="center">
+      <div align="center" class="course-image">
+
+        <!-- @let url = sanitizeUrl(course.image); -->
+
+        <img [src]="course.image" />
+        @if(isAdmin()) {
+        <button class="btn btn-danger" (click)="deleteCourse(course)">
+          <i class="bi bi-trash-fill"></i>
+        </button>
+        }
+      </div>
+
+      <h5 class="mt-3">{{ course?.title }}</h5>
+      <p class="mt-2">
+        {{ course?.description }}
+      </p>
+    </div>
+  </div>
+  } @empty {
+    @if(isAdmin()) {
+      <div align="center" class="mb-5">No Course added yet</div>
+    }
+  }
+</div>

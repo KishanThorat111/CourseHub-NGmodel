@@ -1,0 +1,138 @@
+<div class="card">
+  <!-- <button class="btn btn-primary" (click)="changeIsActive()">change isactive</button> -->
+  <div class="card-header">
+    <span appHoverColor [hoverColor]="'red'">
+      {{ "Add Course" | uppercase }}
+    </span>
+  </div>
+  <div class="card-body">
+    <form #courseForm="ngForm" (ngSubmit)="onSubmit(courseForm)">
+      <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+        <!-- <input
+          type="text"
+          class="form-control"
+          placeholder="Enter title"
+          id="title"
+          name="title"
+          #title="ngModel"
+          [(ngModel)]="model.title"
+          required
+        /> -->
+
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Enter title"
+          id="title"
+          name="title"
+          #title="ngModel"
+          [(ngModel)]="model().title"
+          required
+        />
+
+        @if(title.invalid && title.touched) {
+        <div class="text-danger">Title is required.</div>
+        }
+      </div>
+
+      <div class="mb-3">
+        <label for="description" class="form-label">Description</label>
+        <!-- <textarea
+          class="form-control"
+          rows="3"
+          placeholder="Enter description"
+          id="description"
+          name="description"
+          #description="ngModel"
+          [(ngModel)]="model.description"
+          required
+        ></textarea> -->
+
+        <textarea
+          class="form-control"
+          rows="3"
+          placeholder="Enter description"
+          id="description"
+          name="description"
+          #description="ngModel"
+          [(ngModel)]="model().description"
+          required
+        ></textarea>
+
+        @if(description.invalid && description.touched) {
+        <div class="text-danger">Description is required.</div>
+        }
+      </div>
+
+      <div>
+        <label for="image">Choose an image:</label>
+        <input
+          type="file"
+          id="image"
+          name="image"
+          accept="image/*"
+          [multiple]="false"
+          (change)="onFileSelected($event)"
+          ngModel
+          required
+        />
+
+        <!-- @if(cover) {
+        <div class="imageDiv" align="right">
+          <img [src]="cover" alt="" />
+        </div>
+        } @if(showError) {
+        <div class="text-danger">Image is required.</div>
+        } -->
+
+        @if(cover()) {
+        <div class="imageDiv" align="right">
+          <img [src]="cover()" alt="" />
+        </div>
+        } @if(showError()) {
+        <div class="text-danger">Image is required.</div>
+        }
+      </div>
+
+      <div class="m-3" align="center">
+        <button
+          type="submit"
+          class="btn btn-primary btn-lg"
+          [ngClass]="{ 'btn-success': isSaved() }"
+          [ngStyle]="{ 'color': isSaved() ? 'black' : '' }"
+        >
+          {{ isSaved() ? 'Saved' : 'Save' }}
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<app-courses [isAdmin]="true"></app-courses>
+<!-- <app-courses [isAdmin]="true" [(isActive)]="isActive"></app-courses> -->
+
+<!-- <app-courses
+  [courses]="courses"
+  [isAdmin]="true"
+  (del)="deleteCourse($event)"
+></app-courses> -->
+
+<!-- <app-courses
+  [isAdmin]="true"
+  (del)="deleteCourse($event)"
+></app-courses> -->
+
+<!-- <div class="row mt-5">
+    @for(course of courses; track $index) {
+        <div class="col-lg-4 mb-4">
+            <app-courses [course]="course" [isDelete]="true" (del)="deleteCourse($event)"></app-courses>
+        </div>
+    } @empty {
+       <div align="center">
+        No Course added yet
+       </div> 
+    } -->
+
+<!-- <app-courses *ngFor="let course of courses"></app-courses> -->
+<!-- </div> -->

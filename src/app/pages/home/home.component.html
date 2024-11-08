@@ -1,0 +1,37 @@
+<!-- <div>
+    Coursehub-NGmodel
+    <p>Angular ngmodule project</p>
+  </div>
+  <p>testing styling</p>
+
+  <a [routerLink]="['/', 'about', val]">Go to about</a> -->
+<!-- <a (click)="navigate()">Go to about</a> -->
+
+<section>
+  <img src="imgs/banner.png" />
+
+  <div class="main-content">
+    <h1 class="mt-2">Explore amazing content</h1>
+    <a class="btn btn-lg btn-secondary mt-2">Courses</a> &nbsp;
+    <a class="btn btn-lg btn-primary mt-2">Templates</a>
+  </div>
+</section>
+
+<section class="courses">
+  <div class="container">
+    <h1 class="text-center">All Courses</h1>
+
+    <!-- <div class="row mt-5">
+        @for(course of courses; track $index) {
+            <div class="col-lg-4 mb-4">
+                <app-courses [course]="course"></app-courses>
+            </div>
+        }
+    </div> -->
+
+    <!-- <app-courses [courses]="courses"></app-courses> -->
+     <app-courses></app-courses>
+
+     <app-about></app-about>
+  </div>
+</section>
